@@ -9,7 +9,8 @@ public class PacmanMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dest = transform.position;
+        // dest = transform.position;
+        transform.Translate(dest);
     }
 
     // Update is called once per frame
