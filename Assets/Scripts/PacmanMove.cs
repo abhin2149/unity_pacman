@@ -11,7 +11,6 @@ public class PacmanMove : MonoBehaviour
     void Start ()
     {
         dest = transform.position;
-        //transform.Translate(dest);  
     }
 
     void FixedUpdate() {
