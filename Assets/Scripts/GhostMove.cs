@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GhostMove : MonoBehaviour
-{	public Transform[] waypoints;
+{	
+    public Transform[] waypoints;
 	int cur=0;
 
 	public float speed = 0.3f;
-
+    
     void FixedUpdate(){
     	// Waypoint not reached yet? then move closer
     	if(transform.position!=waypoints[cur].position){
@@ -35,7 +36,11 @@ public class GhostMove : MonoBehaviour
             inky.GetComponent<GhostMove>().speed = 0.0f;
             clyde.GetComponent<GhostMove>().speed = 0.0f;
             pinky.GetComponent<GhostMove>().speed = 0.0f; 
-
+            GameObject maincamera = GameObject.Find("Main Camera");
+            AudioSource bgMusic = maincamera.GetComponent<AudioSource>();
+            AudioSource deathMusic = blinky.GetComponent<AudioSource>();
+            bgMusic.Stop();
+            deathMusic.Play();
        	}
     }
 }
