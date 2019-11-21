@@ -27,6 +27,14 @@ public class GhostMove : MonoBehaviour
     void OnTriggerEnter2D(Collider2D co){
     	if(co.name == "pacman"){
     		Destroy(co.gameObject);
+            GameObject blinky = GameObject.Find("blinky");
+            GameObject inky = GameObject.Find("inky");
+            GameObject clyde = GameObject.Find("clyde");
+            GameObject pinky = GameObject.Find("pinky");
+            blinky.GetComponent<GhostMove>().speed = 0.0f;
+            inky.GetComponent<GhostMove>().speed = 0.0f;
+            clyde.GetComponent<GhostMove>().speed = 0.0f;
+            pinky.GetComponent<GhostMove>().speed = 0.0f; 
 
        	}
     }
